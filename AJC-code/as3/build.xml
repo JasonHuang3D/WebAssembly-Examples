@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<project name="ajc-test-as3-wasm" default="main" basedir=".">
+	<property environment="env" />
+	<property name="ajc.project" value="libs" />
+
+	<condition property="AJC_ASJS_SDK_HOME" value="${env.AJC_ASJS_SDK_HOME}">
+		<and>
+			<not>
+				<isset property="AJC_ASJS_SDK_HOME" />
+			</not>
+			<available file="${env.AJC_ASJS_SDK_HOME}/js/lib/jsc.jar" type="file" />
+		</and>
+	</condition>
+	<condition property="AJC_ASJS_SDK_HOME" value="${basedir}/ajc-asjs-sdk">
+		<and>
+			<not>
+			<isset property="AJC_ASJS_SDK_HOME" />
+			</not>
+			<available file="${basedir}/ajc-asjs-sdk/lib/js/jsc.jar" type="file" />
+		</and>
+	</condition>
+	
+	<condition property="TARGET_VERSION" value="1.0">
+		<not>
+			<isset property="TARGET_VERSION" />
+		</not>
+	</condition>
+	
+	<target name="check-env">
+		<fail message="AJC_ASJS_SDK_HOME not found!" unless="AJC_ASJS_SDK_HOME" />
+		<echo message="AJC_ASJS_SDK_HOME is ${AJC_ASJS_SDK_HOME}" />
+	</target>
+	
+	<target name="clean">
+		<delete failonerror="false" includeEmptyDirs="true" >
+			<fileset dir="${basedir}">
+				<include name="bin/**" />
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="compile-js">
+		<echo message="Compile using js mxmlc" />
+
+		<local name="java.errorCode"/>
+		<local name="java.errorMessage"/>
+
+		<java jar="${AJC_ASJS_SDK_HOME}/lib/js/mxmlc.jar" fork="true" resultProperty="java.errorCode" errorproperty="java.errorMessage">
+		  <arg value="-debug=true" />
+		  <arg value="-source-map=true" />
+		  <arg value="-js-output-type=AJC" />
+		  <arg value="-load-config=${AJC_ASJS_SDK_HOME}/frameworks/js/${TARGET_VERSION}/js-config.xml" />
+		  <arg value="-load-config+=${basedir}/config/js-mxmlc-config.xml" />
+		  <arg value="-output=bin" />
+		</java>
+
+		<fail message="${java.errorMessage}">
+		  <condition>
+			<not>
+			  <or>
+				<equals arg1="${java.errorCode}" arg2="0" />
+			  </or>
+			</not>
+		  </condition>
+		</fail>
+	</target>
+
+	<target name="compile-swf">
+		<echo message="Compile using as3 mxmlc" />
+	
+		<local name="java.errorCode"/>
+		<local name="java.errorMessage"/>
+	
+		<java jar="${AJC_ASJS_SDK_HOME}/lib/flash/mxmlc-cli.jar" fork="true" resultProperty="java.errorCode" errorproperty="java.errorMessage">
+		<arg value="-debug=false" />
+		<arg value="-load-config=${AJC_ASJS_SDK_HOME}/frameworks/flash/flex-config.xml" />
+		<arg value="-load-config+=${basedir}/config/as3-mxmlc-config.xml" />
+		<arg value="-output=bin/swf/Test_AJC.swf" />
+		</java>
+	
+		<fail message="${java.errorMessage}">
+		<condition>
+			<not>
+			<or>
+				<equals arg1="${java.errorCode}" arg2="0" />
+			</or>
+			</not>
+		</condition>
+		</fail>
+	</target>
+
+	<target name="copy-files">
+		<copy todir="${basedir}/bin/js-debug" overwrite="true">
+			<fileset dir="${basedir}/files">
+				<include name="**/**" />
+			</fileset>
+		</copy>
+		<copy todir="${basedir}/bin/swf" overwrite="true">
+			<fileset dir="${basedir}/files">
+				<include name="assets/**" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="main" depends="check-env
+								 ,clean
+								 ,compile-swf
+								 ,compile-js
+								 ,copy-files"/>
+
+
+</project>

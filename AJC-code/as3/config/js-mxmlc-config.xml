@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flex-config>
+  <compiler>
+	  
+    <define append="true">
+      <name>COMPILE::SWF</name>
+      <value>false</value>
+    </define>
+    <define append="true">
+      <name>COMPILE::JS</name>
+      <value>true</value>
+    </define>
+	  
+    <source-path append="true">
+      <path-element>..\src</path-element>
+    </source-path>
+    <external-library-path append="true">
+      <path-element>..\libs\ajcFlash.swc</path-element>
+    </external-library-path>
+  </compiler>
+	
+  <file-specs>
+    <path-element>src\Test_BunnyMark.as</path-element>
+  </file-specs>
+	
+</flex-config>
