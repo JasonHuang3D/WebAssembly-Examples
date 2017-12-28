@@ -2,7 +2,7 @@
 AJC stands for AnyScripts JavaScript C++. 
 
 ## What and Why?
-As Adobe has announced it will stop distributing and updating Flash Player at the end of 2020, we believe Flash API is very powerful for delivering rich media contents, and it may serve much more than just web applications. So we decided to build a c++ version of Flash API and using WebAssembly for targeting to web platforms, which contains most of the [Flash API](https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/).
+As [Adobe has announced](http://blogs.adobe.com/conversations/2017/07/adobe-flash-update.html) it will stop distributing and updating Flash Player at the end of 2020, we believe Flash API is very powerful for delivering rich media contents, and it may serve much more than just web applications. So we decided to build a c++ version of Flash API and using WebAssembly for targeting to web platforms, which contains most of the [Flash API](https://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/).
 
 The reason of doing this is because we love flash and also we wanna provide an efficient-fast-safe c++ version of Flash API for not only As3 lanuage, but also for Java Script and Type Script ( we may consider JAVA and C# in the future).So they are able to natively run on web platform just like what flash player did.
 As we use c++ to develop the entire API, it could be also used as a high-level rich media c++ API for cross-platform developing, such as Windows, OSX, IOS, Android, etc.
