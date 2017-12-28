@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"Test_BunnyMark_Native.js",
+"lineCount":40,
+"mappings":"A;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA4BkB,qBAAhB,WAAqC,CAAC,C,CACtC,C;;EACC,IAAc,iBAAV,UAAY,GAAG,MAAM,CAAC,OAAO,CAAC,C;EAClC,UAAU,CAAC,cAAc,CAAC,CAAC,KAAK,CAAC,C;AAClC;",
+"sources":["..\\..\\src\\Test_BunnyMark_Native.as"],
+"names":[]
+}

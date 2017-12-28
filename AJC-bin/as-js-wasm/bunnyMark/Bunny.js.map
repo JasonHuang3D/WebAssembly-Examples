@@ -1,0 +1,8 @@
+{
+"version":3,
+"file":"Bunny.js",
+"lineCount":39,
+"mappings":"A;;;;;;;;;;;;;;;;;;;AAckB,eAAhB,WAAqB,CAAC,UAAqB,C,CAC3C,C;4CACO,U,CAAW,C;EACjB,KAAA,MAAM,GAAG,CAAC,C;EACV,KAAA,MAAM,GAAG,CAAC,C;AACX,C;;;;;;;;AARW,gCAAa,C;;;;;;;AACb,gCAAa;",
+"sources":["..\\..\\..\\src\\bunnyMark\\Bunny.as"],
+"names":[]
+}
