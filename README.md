@@ -16,10 +16,10 @@ Therefore, currently it runs exactly the same as orignal As3 with flash player.
 
 ## Present
 After few months hard working, we have:
-A sdk suit for building AS3-JavaScript.
-A customized Flash-Develop code IDE to develop As3 projects for targeting both flash player and java script, including debugger using [Java Script source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map) and interacting with chrome remote interface. So you may debug your Java Script files that compiled from original As3 files as exactly the same as you compile them to target original flash player.
-A customized embind for emscripten.
-An initail state of Flash API coding in c++, currently supports display list, event flow, efficient gpu 2d renderer, basic data structures, etc.
+* A sdk suit for building AS3-JavaScript.
+* A customized Flash-Develop code IDE to develop As3 projects for targeting both flash player and java script, including debugger using [Java Script source maps](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map) and interacting with chrome  remote interface. So you may debug your Java Script files that compiled from original As3 files as exactly the same as you compile them to target original flash player.
+* A customized embind for emscripten.
+* An initail state of Flash API coding in c++, currently supports display list, event flow, efficient gpu 2d renderer, basic data structures, etc.
 
 ## Demo
 AJC-bin contains serveral demos below:
