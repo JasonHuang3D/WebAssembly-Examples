@@ -37,6 +37,8 @@ In this folder, we used the same source codes with previous cpp-wasm demo to com
 ## Source
 AJC-code contains the full As3 source codes in order to build the bunnyMark demo. 
 in order to build, you may need [Apache Ant](https://ant.apache.org/bindownload.cgi). Simply call ant in the root of the As3 source folder, will use same As3 source codes to build to both original flash player and java script that interacting with wasm.
+![C++ codes](images/code-style-cpp.png)
+![As3 codes](images/code-style-as3.png)
 
 ## Performance 
 cpp-wasm is almost as fast as native win-vc140. However, as3-js-wasm is about 1.5 times slower than them, due to the cost of a huge number of times that interacting js with cpp side, the cost of writting and reading shared-heap-array is a bit overhead.
