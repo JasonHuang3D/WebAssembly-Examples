@@ -34,11 +34,15 @@ Basicly we are using only wasm. but used same flash API as previous demo used. Y
 ### win-vc140
 In this folder, we used the same source codes with previous cpp-wasm demo to compile to windows native platform with -OX optimized level. You may change the number of bunnies by passing -numBunnies cmd arg.
 
+## Source
+AJC-code contains the full As3 source codes in order to build the bunnyMark demo. 
+in order to build, you may need [Apache Ant](https://ant.apache.org/bindownload.cgi). Simply call ant in the root of the As3 source folder, will use same As3 source codes to build to both original flash player and java script that interacting with wasm.
+
 ## Performance 
 cpp-wasm is almost as fast as native win-vc140. However, as3-js-wasm is about 1.5 times slower than them, due to the cost of a huge number of times that interacting js with cpp side, the cost of writting and reading shared-heap-array is a bit overhead.
 We will be keep optimizing embind. if you have any suggestions, please let me know.
 
-# What next?
+## What next?
 We will be mainly focusing on finishing our c++ Flash API as fast as we can, we all knew this is not an easy task to achieve. But we will never give up, cause we are someone just like you who loves Flash.
 We would truly appriciate any part of help from you. 
 If you are interested in this project and willing to join us, please let me know. 
