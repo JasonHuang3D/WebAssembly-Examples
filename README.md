@@ -36,7 +36,7 @@ In this folder, we used the same source codes with previous cpp-wasm demo to com
 
 ## Source
 AJC-code contains the full As3 source codes in order to build the bunnyMark demo. 
-in order to build, you may need [Apache Ant](https://ant.apache.org/bindownload.cgi). Simply call ant in the root of the As3 source folder, will use same As3 source codes to build to both original flash player and java script that interacting with wasm.
+in order to build, you may need [Apache Ant](https://ant.apache.org/bindownload.cgi). Simply unzip the ajc-asjs-sdk.zip, and call ant in the root of the As3 source folder, will use same As3 source codes to build to both original flash player and java script that interacting with wasm.
 ![C++ codes](images/code-style-cpp.png)
 ![As3 codes](images/code-style-as3.png)
 
