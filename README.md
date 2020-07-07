@@ -24,11 +24,11 @@ After few months hard working, we have:
 
 ## Demo
 AJC-bin contains serveral demos below:
-### [cpp-wasm](https://jasonhuang3d.github.io/AJC-Flash-WebAssembly-Examples/AJC-bin/cpp-wasm/)
+### [cpp-wasm](https://jasonhuang3d.github.io/WebAssembly-Examples/AJC-bin/cpp-wasm/)
 In this folder, we wrote the As3 source codes the previous demo used into c++ side, because we have the same flash API in c++ side, so the bunnyMark c++ source code looks almost the same as As3 one. Even with coding styles:)
 Basically we are using only wasm, but used same flash API as previous demo used. You may change the number of bunnies by changing Test_BunnyMark_Native.js line:39.
 
-### [as3-js-wasm](https://jasonhuang3d.github.io/AJC-Flash-WebAssembly-Examples/AJC-bin/as-js-wasm/)
+### [as3-js-wasm](https://jasonhuang3d.github.io/WebAssembly-Examples/AJC-bin/as-js-wasm/)
 In this folder, we compiled As3 source codes to corresponding Java Scripts, then using compiled Java Scripts to use wasm that contains flash api.
 Basically we are using As3 and Flash API with wasm. You may change the number of bunnies by source codes provided in AJC-code, or just modify the value inside of Test_BunnyMark.js line:56.
 
